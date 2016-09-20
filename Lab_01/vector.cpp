@@ -65,6 +65,17 @@ namespace kr_app {
 		z = z / get_mod();
 	}
 
+	bool vector::cpy_vector(vector b) //return true if ok
+	{
+		// from b to this
+		set_x(b.get_x());
+		set_y(b.get_y());
+		set_z(b.get_z());
+		return true;
+
+		//make what must go wrong
+	}
+
 
 
 }

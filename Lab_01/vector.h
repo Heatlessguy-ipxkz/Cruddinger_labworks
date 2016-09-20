@@ -10,7 +10,7 @@ namespace kr_app {
 		double z;
 	public:
 		vector();
-		vector(double X = 0, double Y = 0, double Z = 0);
+		vector(double X =0, double Y =0, double Z =0);
 		~vector();
 
 		double get_x(void);
@@ -24,6 +24,8 @@ namespace kr_app {
 		double get_mod(void);
 		void make_multiply_scalar(int);
 		void make_unit_vector(void);
+
+		bool cpy_vector(vector);
 
 	};
 
