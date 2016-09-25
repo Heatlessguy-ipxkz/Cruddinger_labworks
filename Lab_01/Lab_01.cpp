@@ -22,20 +22,25 @@ vector calc_mul_vector(vector, vector);
 		cout << "Vector mod - " << direct.get_mod() << endl;
 		cout << "Multiply vector by 2, for example" << endl;
 			direct.make_multiply_scalar(2);
-		cout << "Values in Multiplied vector are: x - " << direct.get_x() << " y - " << direct.get_y() << " z - " << direct.get_z() << endl;
+			cout << "Values in Multiplied vector are:" << endl;
+			direct.print_xyz();
 		cout << "Makin crackin unit vector" << endl;
 			direct.make_unit_vector();
-		cout << "Values in vector are: x - " << direct.get_x() << " y - " << direct.get_y() << " z - " << direct.get_z() << endl;
+		cout << "Values in vector are:" << endl;
+		direct.print_xyz();
 
 		vector direct2(0,0,0);
 		
 		direct2.cpy_vector(direct);
 		direct2.make_multiply_scalar(2);
 
-		vector multiplied = calc_mul_vector(direct, direct2);
+		vector multiplied(0, 0, 0);
+		multiplied.make_multiply(direct, direct2);
 
-		cout << "Values in vector2 are: x - " << direct2.get_x() << " y - " << direct2.get_y() << " z - " << direct2.get_z() << endl;
-		cout << "Values in multiplied vector are: x - " << multiplied.get_x() << " y - " << multiplied.get_y() << " z - " << multiplied.get_z() << endl;
+		cout << "Values in vector2 are: x - "<< endl;
+		direct2.print_xyz();
+		cout << "Values in multiplied vector are:" << endl;
+		multiplied.print_xyz();
 
 
 
@@ -44,12 +49,13 @@ vector calc_mul_vector(vector, vector);
 		return 0;
 	}
 
+	//basic calculating things
 	vector calc_sum(vector a, vector b) {
-		vector result();
+		vector result(0,0,0);
 		result.set_x(a.get_x() + b.get_x());
 		result.set_y(a.get_y() + b.get_y());
 		result.set_z(a.get_z() + b.get_z());
-		return result();
+		return result;
 	};
 
 	vector calc_dis(vector a, vector b) {
@@ -60,6 +66,7 @@ vector calc_mul_vector(vector, vector);
 		return result;
 	};
 
+	//Multipliin by scalar, works
 	vector calc_mul_scalar(vector a, vector b) {
 		vector result(0, 0, 0);
 		result.set_x(a.get_x() * b.get_x());
@@ -69,7 +76,7 @@ vector calc_mul_vector(vector, vector);
 	};
 
 		
-	vector calc_mul_vector(vector a, vector b) {
+	/*vector calc_mul_vector(vector a, vector b) {
 		vector result(0, 0, 0);
 		result.set_x(a.get_y() * b.get_z() - a.get_z() * b.get_y());
 		result.set_y(a.get_z() * b.get_x() - a.get_x() * b.get_z());
@@ -77,4 +84,4 @@ vector calc_mul_vector(vector, vector);
 
 		return result;
 
-	};
+	};*/

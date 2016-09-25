@@ -19,33 +19,45 @@ namespace kr_app {
 		z = Z;
 	}
 
+	vector::vector(vector &pull)
+	{
+		set_x(pull.get_x());
+		set_y(pull.get_y());
+		set_z(pull.get_z());
+	}
+
 	vector vector::operator+(vector K)
 	{
-		this->set_x(this->get_x() + K.get_x());
-		this->set_y(this->get_y() + K.get_y());
-		this->set_z(this->get_z() + K.get_z());
+		this->set_x(get_x() + K.get_x());
+		this->set_y(get_y() + K.get_y());
+		this->set_z(get_z() + K.get_z());
 		return vector();
 	}
 
 	vector vector::operator-(vector K)
 	{
-		this->set_x(this->get_x() - K.get_x());
-		this->set_y(this->get_y() - K.get_y());
-		this->set_z(this->get_z() - K.get_z());
+		set_x(get_x() - K.get_x());
+		set_y(get_y() - K.get_y());
+		set_z(get_z() - K.get_z());
 		return vector();
 	}
 
 	vector vector::operator=(vector K)
 	{
-		this->set_x(K.get_x());
-		this->set_y(K.get_y());
-		this->set_z(K.get_z());
+		set_x(K.get_x());
+		set_y(K.get_y());
+		set_z(K.get_z());
 		return vector();
 	}
 
 	vector::~vector()
 	{
 		printf("	Default destructor\n");
+	}
+
+	void vector::print_xyz()
+	{
+		printf("x - %lf, y - %lf, z - %lf \n", get_x(), get_y(), get_z());
 	}
 
 	double vector::get_x(void)
@@ -85,6 +97,13 @@ namespace kr_app {
 		z *= scalar;
 	}
 
+	void vector::make_multiply(vector a, vector b)
+	{
+		set_x((a.get_y() * b.get_z()) - (a.get_z() * b.get_y()));
+		set_y(a.get_z() * b.get_x() - a.get_x() * b.get_z());
+		set_z(a.get_x() * b.get_y() - a.get_y() * b.get_x());
+	}
+
 	void vector::make_unit_vector(void)
 	{
 		x = x / get_mod();
@@ -95,9 +114,9 @@ namespace kr_app {
 	void vector::cpy_vector(vector b)
 	{
 		// from b to this
-		this->set_x(b.get_x());
-		this->set_y(b.get_y());
-		this->set_z(b.get_z());
+		set_x(b.get_x());
+		set_y(b.get_y());
+		set_z(b.get_z());
 		//return result;
 
 		//make what must go wrong
