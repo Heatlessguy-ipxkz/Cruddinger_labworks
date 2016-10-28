@@ -6,20 +6,23 @@ namespace kr_app {
 	vector::vector()
 	{
 		printf("Default construcror\n");
+		set_x(0.0);
+		set_y(0.0);
+		set_z(0.0);
 	}
 
 	vector::vector(double X, double Y, double Z)
 	{
-		printf("NonDefault construcror :D\n");
+		printf("NonDefault construcror \n");
 		x = X;
 		y = Y;
 		z = Z;
 	}
-
-	vector::~vector()
+	
+	/*vector::~vector()
 	{
 		printf("Default destructor\n");
-	}
+	} */
 
 	double vector::get_x(void)
 	{

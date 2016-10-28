@@ -10,8 +10,8 @@ namespace kr_app {
 		double z;
 	public:
 		vector();
-		vector(double X =0, double Y =0, double Z =0);
-		~vector();
+		vector(double X, double Y, double Z);
+		//~vector();
 
 		double get_x(void);
 		double get_y(void);

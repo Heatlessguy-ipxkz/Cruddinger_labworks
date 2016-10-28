@@ -15,29 +15,10 @@ vector calc_mul_vector(vector, vector);
 	int main()
 	{
 		cout << "Setting up everything..." << endl;
-		vector direct(0.001,2.2,1.77);
-		cout << "Values in vector are: x - " << direct.get_x() << " y - " << direct.get_y() << " z - " << direct.get_z() << endl;
-		cout << "Vector mod - " << direct.get_mod() << endl;
-		cout << "Multiply vector by 2, for example" << endl;
-			direct.make_multiply_scalar(2);
-		cout << "Values in Multiplied vector are: x - " << direct.get_x() << " y - " << direct.get_y() << " z - " << direct.get_z() << endl;
-		cout << "Makin crackin unit vector" << endl;
-			direct.make_unit_vector();
-		cout << "Values in vector are: x - " << direct.get_x() << " y - " << direct.get_y() << " z - " << direct.get_z() << endl;
-
-		vector direct2(0,0);
-		
-		direct2.cpy_vector(direct);
-		direct2.make_multiply_scalar(2);
-
-		vector multiplied(calc_mul_vector(direct, direct2));
-
-		cout << "Values in vector2 are: x - " << direct2.get_x() << " y - " << direct2.get_y() << " z - " << direct2.get_z() << endl;
-		cout << "Values in multiplied vector are: x - " << multiplied.get_x() << " y - " << multiplied.get_y() << " z - " << multiplied.get_z() << endl;
-
-
-
-
+		vector direct;
+		cout << direct.get_x() << endl;
+		vector direct2;
+		cout << direct2.get_x() << endl;
 		getchar();
 		return 0;
 	}
