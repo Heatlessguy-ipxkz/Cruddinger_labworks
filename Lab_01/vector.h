@@ -10,11 +10,11 @@ namespace kr_app {
 		double z;
 	public:
 		vector();
-		vector (double X=0, double Y=0, double Z=0);
+		vector (double X, double Y, double Z);
 		vector(vector &);
-		//vector operator +(vector K);
-		//vector operator -(vector K);
-		//vector operator =(vector K);
+		vector operator +(vector K);
+		vector operator -(vector K);
+		vector operator =(vector K);
 		//~vector();
 
 		void print_xyz();

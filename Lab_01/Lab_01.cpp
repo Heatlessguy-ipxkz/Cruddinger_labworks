@@ -14,7 +14,13 @@ vector calc_mul_vector(vector, vector);
 
 	int main()
 	{	
-		vector x();
+		vector x(1.5, 2.0, 2.5);
+		vector y(2, 3, 4);
+		vector z = y - x;
+		cout << z.get_x() << endl << z.get_x() << endl << z.get_z() << endl;
+		
+
+		system("pause");
 
 		return 0;
 	}
