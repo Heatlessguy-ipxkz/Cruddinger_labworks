@@ -3,22 +3,25 @@
 
 namespace kr_app {
 
-	/*vector::vector()
+	//nonparam constructor
+	vector::vector()
 	{
 		printf("	Zeroing construcror\n");
 		x = 0;
 		y = 0;
 		z = 0;
-	}*/
+	}
 
+	//param constructor
 	vector::vector(double X, double Y, double Z)
 	{
-		printf("	Default constructor :D\n");
+		printf("	Default constructor \n");
 		x = X;
 		y = Y;
 		z = Z;
 	}
 
+	//cpy constructor
 	vector::vector(vector &pull)
 	{
 		set_x(pull.get_x());
@@ -26,12 +29,14 @@ namespace kr_app {
 		set_z(pull.get_z());
 	}
 
+
+	/*
 	vector vector::operator+(vector K)
 	{
 		this->set_x(get_x() + K.get_x());
 		this->set_y(get_y() + K.get_y());
 		this->set_z(get_z() + K.get_z());
-		return vector();
+		return vector(x, y, z);
 	}
 
 	vector vector::operator-(vector K)
@@ -49,12 +54,12 @@ namespace kr_app {
 		set_z(K.get_z());
 		return vector();
 	}
-
+	
 	vector::~vector()
 	{
 		printf("	Default destructor\n");
 	}
-
+	*/
 	void vector::print_xyz()
 	{
 		printf("x - %lf, y - %lf, z - %lf \n", get_x(), get_y(), get_z());

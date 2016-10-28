@@ -13,39 +13,9 @@ vector calc_mul_scalar(vector, vector);
 vector calc_mul_vector(vector, vector);
 
 	int main()
-	{
-		cout << "Setting up everything..." << endl << endl;
-		vector zero;
-		cout << " Values in zeroed vector are: x - " << zero.get_x() << " y - " << zero.get_y() << " z - " << zero.get_z() << endl;
-		vector direct(0.001,2.2,1.77);
-		cout << "Values in vector are: x - " << direct.get_x() << " y - " << direct.get_y() << " z - " << direct.get_z() << endl;
-		cout << "Vector mod - " << direct.get_mod() << endl;
-		cout << "Multiply vector by 2, for example" << endl;
-			direct.make_multiply_scalar(2);
-			cout << "Values in Multiplied vector are:" << endl;
-			direct.print_xyz();
-		cout << "Makin crackin unit vector" << endl;
-			direct.make_unit_vector();
-		cout << "Values in vector are:" << endl;
-		direct.print_xyz();
+	{	
+		vector x();
 
-		vector direct2(0,0,0);
-		
-		direct2.cpy_vector(direct);
-		direct2.make_multiply_scalar(2);
-
-		vector multiplied(0, 0, 0);
-		multiplied.make_multiply(direct, direct2);
-
-		cout << "Values in vector2 are: x - "<< endl;
-		direct2.print_xyz();
-		cout << "Values in multiplied vector are:" << endl;
-		multiplied.print_xyz();
-
-
-
-
-		getchar();
 		return 0;
 	}
 

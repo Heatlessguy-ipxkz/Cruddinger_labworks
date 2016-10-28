@@ -9,13 +9,13 @@ namespace kr_app {
 		double y;
 		double z;
 	public:
-		//vector();
+		vector();
 		vector (double X=0, double Y=0, double Z=0);
 		vector(vector &);
-		vector operator +(vector K);
-		vector operator -(vector K);
-		vector operator =(vector K);
-		~vector();
+		//vector operator +(vector K);
+		//vector operator -(vector K);
+		//vector operator =(vector K);
+		//~vector();
 
 		void print_xyz();
 		double get_x();
