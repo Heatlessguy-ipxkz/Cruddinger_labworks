@@ -5,7 +5,7 @@ namespace kr_app {
 
 	vector::vector()
 	{
-		printf("Default construcror\n");
+		//printf("Default construcror\n");
 		set_x(0.0);
 		set_y(0.0);
 		set_z(0.0);
@@ -13,17 +13,36 @@ namespace kr_app {
 
 	vector::vector(double X, double Y, double Z)
 	{
-		printf("NonDefault construcror \n");
+		//printf("NonDefault construcror\n");
 		x = X;
 		y = Y;
 		z = Z;
 	}
-	
-	/*vector::~vector()
-	{
-		printf("Default destructor\n");
-	} */
 
+
+	//Оператор сложения векторов
+	vector vector::operator+(vector a)
+	{
+		return vector(a.get_x() + this->get_x(), a.get_y() + this->get_y(), a.get_z() + this->get_z());
+	}
+	//Оператор вычитания векторов(мб понадобится)
+	vector vector::operator-(vector a)
+	{
+		return vector(this->get_x() - a.get_x(), this->get_y() - a.get_y(), this->get_z() - a.get_z());
+	}
+	//Оператор скалярного умножения векторов.
+	vector vector::operator* (vector a)
+	{
+		return vector(this->get_x() * a.get_x(), this->get_y() * a.get_y(), this->get_z() * a.get_z());
+	}
+	///TODO Придумать перегруз оператора для векторного умножения, см. функцию в main
+	//Оператор умножения на скаляр. Скаляр в int, да.
+	vector vector::operator*(int a)
+	{
+		return vector(this->get_x() * a, this->get_y() * a, this->get_z() * a);
+	}
+
+	// Методы ввода/вывода
 	double vector::get_x(void)
 	{
 		return x;
@@ -49,17 +68,19 @@ namespace kr_app {
 		z = input;
 	}
 
+	//Метод нахождения модуля вектора. 
 	double vector::get_mod(void)
 	{
-		return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
+		return sqrt(pow(this->get_x(), 2) + pow(this->get_y(), 2) + pow(this->get_z(), 2));
 	}
 
+	/* РЕАЛИЗОВАНО ПЕРЕГРУЗКОЙ ОПЕРАТОРА, НО ЭТОТ МУСОР ОСТАВЛЮ ТУТ ДО ЛУЧШИХ ВРЕМЕН.
 	void vector::make_multiply_scalar(int scalar)
 	{
 		x *= scalar;
 		y *= scalar;
 		z *= scalar;
-	}
+	} */
 
 	void vector::make_unit_vector(void)
 	{
@@ -68,16 +89,18 @@ namespace kr_app {
 		z = z / get_mod();
 	}
 
-	bool vector::cpy_vector(vector b) //return true if ok
+
+
+	/*
+	void vector::cpy_vector(vector b) //return true if ok
 	{
 		// from b to this
 		set_x(b.get_x());
 		set_y(b.get_y());
 		set_z(b.get_z());
-		return true;
 
 		//make what must go wrong
-	}
+	}*/
 
 
 

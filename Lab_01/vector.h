@@ -11,7 +11,10 @@ namespace kr_app {
 	public:
 		vector();
 		vector(double X, double Y, double Z);
-		//~vector();
+		vector operator + (vector a);
+		vector operator - (vector a);
+		vector operator * (vector a);
+		vector operator * (int a);
 
 		double get_x(void);
 		double get_y(void);
@@ -22,10 +25,12 @@ namespace kr_app {
 		void set_z(double);
 
 		double get_mod(void);
-		void make_multiply_scalar(int);
+		//Выпилено, реализовано в виде перегруженного оператора умножения
+		//void make_multiply_scalar(int);
 		void make_unit_vector(void);
 
-		bool cpy_vector(vector);
+		//См. конструктор копирования
+		//void cpy_vector(vector);
 
 	};
 
