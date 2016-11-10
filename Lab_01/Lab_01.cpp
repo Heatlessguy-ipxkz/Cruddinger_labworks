@@ -1,25 +1,28 @@
 // Lab_01.cpp : Console app. 
 // Maked by a_kr. Всё работает, вроде как. 
 
+
 #include "stdafx.h"
 #include "vector.h"
 
 using namespace std;
-using kr_app::vector;
+using namespace kr_app;
 
 /*vector calc_sum(vector, vector);
 vector calc_dis(vector, vector);
 vector calc_mul_scalar(vector, vector);*/
+//vector calc_mul_vector(vector, vector);
+//void print_xyz(vector);
 
-vector calc_mul_vector(vector, vector);
-void print_xyz(vector);
+
+
 
 	int main()
 	{
 		cout << "Setting up everything..." << endl;
 		vector v1, v2(5,3,1), v3(10, 1, 2);
 			cout << " v1 is:" << endl;
-			print_xyz(v1);
+				print_xyz(v1);
 			cout << " v2 is:" << endl;
 			print_xyz(v2);
 			cout << " v3 is:" << endl;
@@ -32,14 +35,18 @@ void print_xyz(vector);
 			cout << " v1 = v2 - v3:" << endl;
 			print_xyz(v1);
 		v1 = v2 * v3;
-			cout << " v1 = v2 * v3 (scalar):" << endl;
+			cout << " v1 = v2 * v3 (vector):" << endl;
 			print_xyz(v1);
 			cout << " v1 = v2 * 2 (scalar):" << endl;
 		v1 = v3 * 2;
 			print_xyz(v1);
-			cout << " v1 = v2 * v3 (vector):" << endl;
-		v1 = calc_mul_vector(v1, v2);
-			print_xyz(v1);
+			cout << " v1 = v2 * v3 (scalar):" << endl;
+		cout << "scalar v2 v3:  "<< calc_scalar_vector(v3, v2) << endl;
+		cout << "cos v2 v3:  " << calc_cos_vector(v3, v2) << endl;
+		cout << "sin v2 v3:  " << calc_sin_vector(v3, v2) << endl;
+		cout << "angle v2 v3:  " << calc_angle_vector(v3, v2) << endl;
+
+
 		system("pause");
 		
 	}
@@ -72,11 +79,4 @@ void print_xyz(vector);
 	};*/
 
 	
-	//Векторное произведение. 
-	vector calc_mul_vector(vector a, vector b) {
-		return vector(a.get_y()*b.get_z() - a.get_z()*b.get_y(), a.get_z()*b.get_x() - a.get_x()*b.get_z(), a.get_x()*b.get_y() - a.get_y()*b.get_x());
-	};
-
-	void print_xyz(vector v) {
-	cout << v.get_x() << " " << v.get_y() << " " << v.get_z() << endl;
-	};
+	
